@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
+/*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:40:42 by vlima             #+#    #+#             */
-/*   Updated: 2023/01/16 16:40:49 by vlima            ###   ########.fr       */
+/*   Updated: 2023/02/01 23:24:15 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ void	rr(t_node **stack1, t_node **stack2)
 	ft_rotate(stack2);
 	write(1, "rr\n", 3);
 }
-
-
 //push
 
 void	pa(t_node **a, t_node **b)
@@ -44,8 +42,6 @@ void	pa(t_node **a, t_node **b)
 
 void	pb(t_node **a, t_node **b)
 {
-	ft_push(b, a);
+	ft_push(a, b);
 	write(1, "pb\n", 3);
 }
-
-//push

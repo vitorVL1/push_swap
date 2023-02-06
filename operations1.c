@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
+/*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:40:22 by vlima             #+#    #+#             */
-/*   Updated: 2023/01/16 16:40:29 by vlima            ###   ########.fr       */
+/*   Updated: 2023/01/23 13:51:07 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,6 @@ void	ft_push(t_node **stack1, t_node **stack2)
 	top_a->next = top_b;
 	*stack2 = top_a;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // rrr
 

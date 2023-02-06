@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
+/*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:18:43 by vlima             #+#    #+#             */
-/*   Updated: 2023/01/16 16:39:12 by vlima            ###   ########.fr       */
+/*   Updated: 2023/01/25 12:19:01 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/* 
 t_node	*push_swap(int argc, char **argv)
 {
 	int		i;
@@ -26,7 +26,7 @@ t_node	*push_swap(int argc, char **argv)
 		*start = node;
 		else if (*start != NULL)
 		{
-			ft_addstack(start, node);
+			ft_addstack(&start, node);
 			node = node->next;
 		}
 	}
@@ -40,7 +40,6 @@ int	main(int argc, char **argv)
 
 	stack_a = push_swap(argc, argv);
 	stack_b = NULL;
-
 	if (argc < 5)
 	{
 		short_sorter(&stack_a);
@@ -50,6 +49,6 @@ int	main(int argc, char **argv)
 		sorter5(&stack_a, &stack_b);
 	}
 	printstack(&stack_a, &stack_b);
-
 	return (0);
 }
+  */

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+         #
+#    By: vlima <vlima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 16:40:56 by vlima             #+#    #+#              #
-#    Updated: 2023/01/16 16:40:57 by vlima            ###   ########.fr        #
+#    Updated: 2023/01/26 17:07:09 by vlima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRC = operations1.c operations2.c operantions3.c pushswap.c main.c utils.c utils2.c short_sorter.c
+SRC = operations1.c operations2.c operations3.c push_swap.c main.c utils.c utils2.c utils3.c pushlower.c short_sorter.c push_top.c
 
 
 all:			$(NAME)
