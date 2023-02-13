@@ -12,6 +12,19 @@
 
 #include "push_swap.h"
 
+/* void	ft_first_negative(t_node **stack2)
+{
+	while (stack2 != NULL)
+	{
+		if ((*stack2)->content < 0)
+		{
+			return ;
+		}
+		stack2 = (*stack2)->next;
+	}
+	return ;
+} */
+
 void	ft_reverse_stack(t_node **stack1, t_node **stack2, int i)
 {
 	if (i > 0)
@@ -65,17 +78,23 @@ void	stack_mid_organizer(t_node **stack1, t_node **stack2)
 {
 	t_node	*current;
 	t_node	*current2;
-	int		div;
+	double	div;
 	int		pos;
+	int		num;
 
 	current = *stack1;
 	current2 = *stack2;
 	pos = 0;
 	div = 1;
-	while (pos <= 20 && div > 0)
+	num = current->content;
+	/*  if (num < 0)
+		num = current->content * -1; */
+	//printf("num:%d\n", num);
+	while (pos <= 100 && div > 0 || div < 0)
 	{
-		div = current2->content / current->content;
-		printf("div:%d\n", div);
+		//if (current2 ->content != num *-1)
+		div = current2->content / num;
+		printf("div:%f\n", div);
 		pos++;
 		current2 = current2->next;
 	}
@@ -102,7 +121,7 @@ void	stack_organizer(t_node **stack1, t_node **stack2)
 		rb(stack2);
 	}
 	else if (current->content < current2->content
-		&& current->content > current2->next->content)
+			&& current->content > current2->next->content)
 	{
 		pb(stack1, stack2);
 		sb(stack2);
