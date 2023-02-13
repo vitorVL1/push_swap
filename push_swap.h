@@ -6,7 +6,7 @@
 /*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:25:55 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/02 14:57:45 by vlima            ###   ########.fr       */
+/*   Updated: 2023/02/13 16:33:08 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void				match_finder(t_node **stack1, t_node **stack2, int *array,
 						int size);
 void				ft_pushtotop(t_node **stack1, t_node **stack2, int cont);
 void				stack_organizer(t_node **stack1, t_node **stack2);
+size_t				ft_strlen(const char *str);
 
 //utils
 

@@ -6,7 +6,7 @@
 /*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:35:44 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/13 12:55:42 by vlima            ###   ########.fr       */
+/*   Updated: 2023/02/13 16:46:30 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,6 @@ bool	checker_dup(int *array, int size)
 	printf("not dup\n");
 	return (1);
 }
-int	argv_is_int(char argv)
-{
-	int	i;
-	int	len_argv;
-
-	i = 1;
-	len_argv = ft_strlen(argv[i]);
-	while (argv[i] != NULL)
-	{
-		if (len_argv > 10)
-			return (0);
-		if (ft_atoll(argv[i]) > 2147483647 || ft_atoll(argv[i]) < -2147483648)
-			return (0);
-		i++;
-	}
-	return (1);
-}
 
 int	checker_num(int argc, char *argv[])
 {
@@ -65,6 +48,12 @@ int	checker_num(int argc, char *argv[])
 	{
 		h = 0;
 		str = argv[i];
+		if (ft_atol(argv[i]) > 2147483647 || ft_atol(argv[i]) < -2147483648
+			|| ft_strlen(argv[i]))
+		{
+			printf("not int\n");
+			return (0);
+		}
 		while (str[h] != '\0')
 		{
 			if ((str[h] < 48 || str[h] > 57) && str[h] != 45)
@@ -76,7 +65,6 @@ int	checker_num(int argc, char *argv[])
 		}
 		i++;
 	}
-	printf("All elements are numbers\n");
 	return (1);
 }
 
@@ -109,7 +97,6 @@ int	main(int argc, char **argv)
 	t_node	*stack_a;
 	t_node	*stack_b;
 	int		i[argc];
-	int		k;
 
 	if (checker_num(argc, argv) == 0)
 		return (0);
@@ -120,12 +107,6 @@ int	main(int argc, char **argv)
 	sort_array_ascending(i, argc - 1);
 	if (checker_dup(i, argc) == 0)
 		return (0);
-	k = 0;
-	while (k < argc - 1)
-	{
-		printf("%d\n", i[k]);
-		k++;
-	}
 	//printstack(&stack_a, &stack_b);
 	match_finder(&stack_a, &stack_b, i, argc);
 	/*

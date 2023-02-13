@@ -6,7 +6,7 @@
 /*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:32:05 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/02 14:12:05 by vlima            ###   ########.fr       */
+/*   Updated: 2023/02/13 16:33:15 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,17 @@ void	sort_array_ascending(int *array, int size)
 			j++;
 		}
 		i++;
+	}
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	length;
+
+	length = 0;
+	while (*str != '\0')
+	{
+		length++;
+		str++;
 	}
 }
