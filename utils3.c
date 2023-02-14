@@ -72,6 +72,7 @@ void	ft_push_to_top_b(t_node **stack1, t_node **stack2, int pos)
 	}
 	pb(stack1, stack2);
 	ft_reverse_stack(stack1, stack2, i);
+	printf("fafa");
 }
 
 void	stack_mid_organizer(t_node **stack1, t_node **stack2)
@@ -89,7 +90,7 @@ void	stack_mid_organizer(t_node **stack1, t_node **stack2)
 	num = current->content;
 	/*  if (num < 0)
 		num = current->content * -1; */
-	//printf("num:%d\n", num);
+	printf("num:%d\n", num);
 	while (pos <= 100 && div > 0 || div < 0)
 	{
 		//if (current2 ->content != num *-1)
@@ -128,4 +129,5 @@ void	stack_organizer(t_node **stack1, t_node **stack2)
 	}
 	else
 		stack_mid_organizer(stack1, stack2);
+	printf("adaddd");
 }
