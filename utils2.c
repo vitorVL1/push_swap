@@ -6,7 +6,7 @@
 /*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:32:05 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/13 16:33:15 by vlima            ###   ########.fr       */
+/*   Updated: 2023/02/16 18:16:02 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ long	ft_atol(const char *str)
 	return (sign * result);
 }
 
-void	list2array(t_node **stack1, int *array, int size)
+void	list2array(t_node **stack1, int *array)
 {
 	t_node	*current;
 	int		i;
@@ -59,7 +59,6 @@ void	list2array(t_node **stack1, int *array, int size)
 		current = current->next;
 		i++;
 	}
-	size = i;
 }
 
 void	sort_array_ascending(int *array, int size)

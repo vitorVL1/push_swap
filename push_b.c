@@ -12,19 +12,6 @@
 
 #include "push_swap.h"
 
-/* void	ft_first_negative(t_node **stack2)
-{
-	while (stack2 != NULL)
-	{
-		if ((*stack2)->content < 0)
-		{
-			return ;
-		}
-		stack2 = (*stack2)->next;
-	}
-	return ;
-} */
-
 void	ft_reverse_stack(t_node **stack1, t_node **stack2, int i)
 {
 	if (i > 0)
@@ -72,7 +59,6 @@ void	ft_push_to_top_b(t_node **stack1, t_node **stack2, int pos)
 	}
 	pb(stack1, stack2);
 	ft_reverse_stack(stack1, stack2, i);
-	printf("fafa");
 }
 
 void	stack_mid_organizer(t_node **stack1, t_node **stack2)
@@ -90,33 +76,58 @@ void	stack_mid_organizer(t_node **stack1, t_node **stack2)
 	num = current->content;
 	/*  if (num < 0)
 		num = current->content * -1; */
-	printf("num:%d\n", num);
-	while (pos <= 100 && div > 0 || div < 0)
+	//	printf("num:%d\n", num);
+	while (pos <= 100 && div > 0) //|| current2 ->content < 0 && num < 0
 	{
 		//if (current2 ->content != num *-1)
 		div = current2->content / num;
-		printf("div:%f\n", div);
+		//printf("div:%f\n", div);
 		pos++;
 		current2 = current2->next;
 	}
 	ft_push_to_top_b(stack1, stack2, pos);
-	printstack(stack1, stack2);
+	//printstack(stack1, stack2);
+}
+
+void	negative_organizer(t_node **stack1, t_node **stack2)
+{
+	t_node	*current1;
+	t_node	*current2;
+	int		i;
+	int		pos;
+
+	current1 = *stack1;
+	current2 = *stack2;
+	pos = 0;
+	i = 0;
+	while (current2->content > 0 && current2)
+	{
+		current2 = current2->next;
+		pos++;
+	}
+	while (current2->content / current1->content < 0 && current2)
+	{
+		current2 = current2->next;
+		pos++;
+	}
+	while (pos++ != ft_lstsize(*stack2) && i++ < 100000)
+		rrb(stack2);
+	pb(stack1, stack2);
+	ft_reverse_stack(stack1, stack2, i);
 }
 
 void	stack_organizer(t_node **stack1, t_node **stack2)
 {
 	t_node	*current;
 	t_node	*current2;
-	t_node	*last;
 
 	current = *stack1;
 	current2 = *stack2;
-	last = ft_lstlast(*stack2);
 	if (current2 == NULL)
 		pb(stack1, stack2);
 	else if (current->content > current2->content)
 		pb(stack1, stack2);
-	else if (current->content < last->content)
+	else if (current->content < ft_lstlast(*stack2)->content)
 	{
 		pb(stack1, stack2);
 		rb(stack2);
@@ -127,7 +138,8 @@ void	stack_organizer(t_node **stack1, t_node **stack2)
 		pb(stack1, stack2);
 		sb(stack2);
 	}
+	else if (current->content < 0)
+		negative_organizer(stack1, stack2);
 	else
 		stack_mid_organizer(stack1, stack2);
-	printf("adaddd");
 }

@@ -6,7 +6,7 @@
 /*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:25:55 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/13 16:33:08 by vlima            ###   ########.fr       */
+/*   Updated: 2023/02/16 18:16:21 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void				sorter5(t_node **stack1, t_node **stack2);
 //sorters
 
 //utils
-void				ft_index(t_node *stack1);
+
 int					find_lowest(t_node *stack);
 void				ft_lstadd_back(t_node **lst, t_node *new);
 t_node				*ft_lstlast(t_node *lst);
@@ -63,7 +63,7 @@ void				printstack(t_node **current, t_node **current2);
 t_node				*ft_addstack(long value, int argc);
 long				ft_atol(const char *str);
 void				sort_array_ascending(int *array, int size);
-void				list2array(t_node **stack1, int *array, int size);
+void				list2array(t_node **stack1, int *array);
 int					ft_lstsize(t_node *stack1);
 void				match_finder(t_node **stack1, t_node **stack2, int *array,
 						int size);
