@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:32:05 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/16 18:16:02 by vlima            ###   ########.fr       */
+/*   Updated: 2023/02/24 13:27:37 by vitorvl          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	list2array(t_node **stack1, int *array)
 		current = current->next;
 		i++;
 	}
+	printf("i:%i\n",i);
 }
 
 void	sort_array_ascending(int *array, int size)
@@ -73,7 +74,7 @@ void	sort_array_ascending(int *array, int size)
 		j = i + 1;
 		while (j < size)
 		{
-			if (array[i] > array[j])
+			if (array[i] < array[j])
 			{
 				temp = array[i];
 				array[i] = array[j];

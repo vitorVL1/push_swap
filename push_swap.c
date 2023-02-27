@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:18:43 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/16 18:17:25 by vlima            ###   ########.fr       */
+/*   Updated: 2023/02/20 18:37:35 by vitorvl          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ bool	checker_dup(int *array, int size)
 	//printf("not dup\n");
 	return (1);
 }
-
+//19 27 8 25 14 12 30 18 7 22 21 9 24 2 10 3 11 13 26 15 6 29 20 1 17 23 16 4 28 5
 int	checker_num(int argc, char *argv[])
 {
 	char	*str;
@@ -117,16 +117,24 @@ int	main(int argc, char **argv)
 	stack_a = push_swap(argc, argv);
 	stack_b = NULL;
 	stack_a->head = stack_a;
+	/*  while(stack_a)
+	{
+		printf("valor da list:%d \n",stack_a->content);
+		stack_a= stack_a->next;
+	} 
+	stack_a = stack_a->head; */
 	list2array(&stack_a, i);
-	while (i[o])
+	while (o< 35)
 	{
 		printf("array:%i\n",i[o]);
 		o++;
+		printf("o:%i\n",o);
 	}
-	sort_array_ascending(i, 67);
+	o=0;
+	sort_array_ascending(i,30);
 	if (checker_dup(i, argc) == 0)
 		return (0);
-	while (i[o])
+	while (o< 35)
 	{
 		printf("array2:%i\n",i[o]);
 		o++;
