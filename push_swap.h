@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlima <vlima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:25:55 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/16 18:16:21 by vlima            ###   ########.fr       */
+/*   Updated: 2023/02/28 14:26:07 by vitorvl          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void				match_finder(t_node **stack1, t_node **stack2, int *array,
 void				ft_pushtotop(t_node **stack1, t_node **stack2, int cont);
 void				stack_organizer(t_node **stack1, t_node **stack2);
 size_t				ft_strlen(const char *str);
+int					**create_chunk_array(int *arr, int arr_size, int chunk_size,
+						int *num_chunks);
 
 //utils
 

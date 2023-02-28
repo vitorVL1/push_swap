@@ -6,7 +6,7 @@
 /*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:18:43 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/20 18:37:35 by vitorvl          ###   ########.fr       */
+/*   Updated: 2023/02/28 17:24:39 by vitorvl          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,38 +109,48 @@ int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
-	int		i[30];
+	int		i[argc-1];
 	int		o=0;
+	int		num_chunks;
+	int 	chunk_size;
+	int		**chunks;
+	chunk_size = 20;
 
 	if (checker_num(argc, argv) == 0)
 		return (0);
 	stack_a = push_swap(argc, argv);
 	stack_b = NULL;
 	stack_a->head = stack_a;
-	/*  while(stack_a)
-	{
-		printf("valor da list:%d \n",stack_a->content);
-		stack_a= stack_a->next;
-	} 
-	stack_a = stack_a->head; */
 	list2array(&stack_a, i);
-	while (o< 35)
+	/* if (checker_dup(i, argc) == 0)
+		return (0); */
+	sort_array_ascending(i,argc-1);
+	chunks = create_chunk_array(i, argc - 1, chunk_size, &num_chunks);
+
+	 printf("\n\n");
+		for (int o = 0; o < num_chunks; o++)
 	{
-		printf("array:%i\n",i[o]);
-		o++;
-		printf("o:%i\n",o);
-	}
-	o=0;
-	sort_array_ascending(i,30);
-	if (checker_dup(i, argc) == 0)
-		return (0);
-	while (o< 35)
-	{
-		printf("array2:%i\n",i[o]);
-		o++;
-	}
+		printf("Chunk %d: [", o);
+		for (int j = 0; j < chunk_size && o * chunk_size + j < argc - 1; j++)
+		{
+			printf("%d", chunks[o][j]);
+			if (j < chunk_size - 1 && o * chunk_size + j < argc - 1)
+			{
+				printf(", ");
+			}
+		}
+		printf("]\n\n\n");
+	} 
 	
-	//match_finder(&stack_a, &stack_b, i, argc);
+	int l = 0;
+    while (l < num_chunks) {
+	//	printstack(&stack_a, &stack_b);
+		//printf("correeeeeeeeeeeeeeeeeeeeeuuuuuuuuuuuu\n");
+       match_finder(&stack_a, &stack_b, chunks[l], chunk_size);
+		//printstack(&stack_a, &stack_b);
+        l++;
+    }
+
 	/* while (stack_b)
 		pa(&stack_a, &stack_b);
 	printstack(&stack_a, &stack_b); */
