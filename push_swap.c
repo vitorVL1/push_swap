@@ -6,7 +6,7 @@
 /*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:18:43 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/28 17:24:39 by vitorvl          ###   ########.fr       */
+/*   Updated: 2023/03/01 14:38:18 by vitorvl          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ int	main(int argc, char **argv)
 		return (0); */
 	sort_array_ascending(i,argc-1);
 	chunks = create_chunk_array(i, argc - 1, chunk_size, &num_chunks);
+	 
 
 	 printf("\n\n");
 		for (int o = 0; o < num_chunks; o++)
@@ -146,7 +147,7 @@ int	main(int argc, char **argv)
     while (l < num_chunks) {
 	//	printstack(&stack_a, &stack_b);
 		//printf("correeeeeeeeeeeeeeeeeeeeeuuuuuuuuuuuu\n");
-       match_finder(&stack_a, &stack_b, chunks[l], chunk_size);
+      match_finder(&stack_a, &stack_b, chunks[l], chunk_size);
 		//printstack(&stack_a, &stack_b);
         l++;
     }
