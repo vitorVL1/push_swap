@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:32:05 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/24 13:27:37 by vitorvl          ###   ########.fr       */
+/*   Updated: 2023/03/02 14:24:41 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,5 @@ size_t	ft_strlen(const char *str)
 		length++;
 		str++;
 	}
+	return(length);
 }

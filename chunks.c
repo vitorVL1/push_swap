@@ -36,6 +36,7 @@ int *num_chunks)
 			end_index = arr_size;
 		}
 		chunks[j] = create_chunk(arr, i, end_index);
+		siz()->siz = end_index;
 		i += chunk_size;
 		j++;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:25:55 by vlima             #+#    #+#             */
-/*   Updated: 2023/02/28 14:26:07 by vitorvl          ###   ########.fr       */
+/*   Updated: 2023/03/03 14:48:25 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ typedef struct node_a
 	int				content;
 	struct node_a	*next;
 }					t_node;
+
+typedef struct s_siz
+{
+	int	siz;
+}	t_siz;
+
+
+t_siz	*siz(void);
 
 //main operations
 void				ft_swap(t_node **stack);

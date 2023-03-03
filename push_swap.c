@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:18:43 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/01 14:38:18 by vitorvl          ###   ########.fr       */
+/*   Updated: 2023/03/02 14:35:51 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,8 @@ int	main(int argc, char **argv)
 	int		**chunks;
 	chunk_size = 20;
 
-	if (checker_num(argc, argv) == 0)
-		return (0);
+	//if (checker_num(argc, argv) == 0)
+		//return (0);
 	stack_a = push_swap(argc, argv);
 	stack_b = NULL;
 	stack_a->head = stack_a;
@@ -126,7 +126,6 @@ int	main(int argc, char **argv)
 		return (0); */
 	sort_array_ascending(i,argc-1);
 	chunks = create_chunk_array(i, argc - 1, chunk_size, &num_chunks);
-	 
 
 	 printf("\n\n");
 		for (int o = 0; o < num_chunks; o++)
