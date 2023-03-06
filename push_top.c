@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_top.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
+/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:24:25 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/03 15:39:24 by vlima            ###   ########.fr       */
+/*   Updated: 2023/03/06 18:03:10 by vitorvl          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void	match_finder(t_node **stack1, t_node **stack2, int *array, int size)
 	i = 0;
 	current = *stack1;
 	printstack(stack1, stack2);
-	size = siz()->siz;
 	printf("size:%i\n",size);
 	while (current)
 	{

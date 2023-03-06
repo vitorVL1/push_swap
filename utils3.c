@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
+/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:27:43 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/03 14:48:12 by vlima            ###   ########.fr       */
+/*   Updated: 2023/03/06 16:46:45 by vitorvl          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_size	*siz(void)
+t_utils *utils(void)
 {
-	static t_size siz;
-
-	return (&siz);
+	static t_utils utils;
+	return (&utils);
 }

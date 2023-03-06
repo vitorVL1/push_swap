@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
+/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:18:43 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/02 14:35:51 by vlima            ###   ########.fr       */
+/*   Updated: 2023/03/06 18:03:26 by vitorvl          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,14 +143,17 @@ int	main(int argc, char **argv)
 	} 
 	
 	int l = 0;
-    while (l < num_chunks) {
+    while (l < num_chunks -1) {
 	//	printstack(&stack_a, &stack_b);
 		//printf("correeeeeeeeeeeeeeeeeeeeeuuuuuuuuuuuu\n");
       match_finder(&stack_a, &stack_b, chunks[l], chunk_size);
-		//printstack(&stack_a, &stack_b);
+	   while (stack_b)
+		pa(&stack_a, &stack_b);
+		printstack(&stack_a, &stack_b);
         l++;
     }
-
+	match_finder(&stack_a, &stack_b, chunks[l], utils() ->i);
+	
 	/* while (stack_b)
 		pa(&stack_a, &stack_b);
 	printstack(&stack_a, &stack_b); */

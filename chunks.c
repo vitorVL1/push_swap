@@ -6,6 +6,7 @@ int	*create_chunk(int *arr, int start_index, int end_index)
 	int	i;
 
 	i = 0;
+	utils()->i = end_index - start_index;
 	chunk = malloc((end_index - start_index) * sizeof(int));
 	while (start_index + i < end_index)
 	{
@@ -36,7 +37,6 @@ int *num_chunks)
 			end_index = arr_size;
 		}
 		chunks[j] = create_chunk(arr, i, end_index);
-		siz()->siz = end_index;
 		i += chunk_size;
 		j++;
 	}
