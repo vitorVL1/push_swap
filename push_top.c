@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_top.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:24:25 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/06 18:03:10 by vitorvl          ###   ########.fr       */
+/*   Updated: 2023/03/07 14:56:55 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	ft_push_top(t_node **stack1, int cont)
 	}
 	else if (cont >= half)
 	{
-		while (cont < half && cont != ft_lstsize(*stack1))
+
+		while (cont > half && cont != ft_lstsize(*stack1))
 		{
 			cont++;
 			rra(stack1);
@@ -60,24 +61,25 @@ void	match_finder(t_node **stack1, t_node **stack2, int *array, int size)
 	pos = 0;
 	i = 0;
 	current = *stack1;
-	printstack(stack1, stack2);
-	printf("size:%i\n",size);
+	//printstack(stack1, stack2);
+	//printf("size:%i\n",size);
+	utils() ->save_array = array;
 	while (current)
 	{
 		i = 0;
 		while (i < size)
 		{
-			printf("1array:%i\n",array[i]);
+			//printf("1array:%i\n",array[i]);
 			if (current->content == array[i])
 			{
-				printf("valor do array:%d valor da list:%d \n", array[i],
-						current->content);
+				//printf("valor do array:%d valor da list:%d \n", array[i],
+					//	current->content);
 				ft_pushtotop(stack1, stack2, pos);
 				current = *stack1;
 				pos = 0;
 				i = -1;
 				//printf("saiu pushtop\n");
-				printstack(stack1, stack2);
+				//printstack(stack1, stack2);
 				//printf("afteer pritn\n");
 
 			}
@@ -88,7 +90,7 @@ void	match_finder(t_node **stack1, t_node **stack2, int *array, int size)
 		pos++;
 	}
 	//printf("saiu match\n");
-	stack_organizer(stack1,stack2);
+	//stack_organizer(stack1,stack2);
 	//printstack(stack1, stack2);
 }
 

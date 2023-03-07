@@ -74,7 +74,6 @@ void	stack_mid_organizer(t_node **stack1, t_node **stack2)
 	pos = 0;
 	div = 1;
 	num = current->content;
-	;
 	while (pos <= 100 && div > 0) 
 	{
 		div = current2->content / num;
@@ -82,7 +81,7 @@ void	stack_mid_organizer(t_node **stack1, t_node **stack2)
 		pos++;
 		current2 = current2->next;
 	}
-	printstack(stack1, stack2);
+	//printstack(stack1, stack2);
 	ft_push_to_top_b(stack1, stack2, pos);
 }
 
@@ -108,7 +107,8 @@ void	negative_organizer(t_node **stack1, t_node **stack2)
 		pos++;
 	}
 	while (pos++ != ft_lstsize(*stack2) && i++ < 100000)
-		rrb(stack2);
+		double_r(stack1,stack2,1);
+		//rrb(stack2);
 	pb(stack1, stack2);
 	ft_reverse_stack(stack1, stack2, i);
 }

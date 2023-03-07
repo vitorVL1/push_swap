@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitorvl <vitorvl@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:18:43 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/06 18:03:26 by vitorvl          ###   ########.fr       */
+/*   Updated: 2023/03/07 15:21:33 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,13 +101,7 @@ t_node	*push_swap(int argc, char **argv)
 			ft_lstadd_back(&start, node);
 		}
 		i++;
-	}
-	return (start);
-}
-
-int	main(int argc, char **argv)
-{
-	t_node	*stack_a;
+	}s
 	t_node	*stack_b;
 	int		i[argc-1];
 	int		o=0;
@@ -127,7 +121,7 @@ int	main(int argc, char **argv)
 	sort_array_ascending(i,argc-1);
 	chunks = create_chunk_array(i, argc - 1, chunk_size, &num_chunks);
 
-	 printf("\n\n");
+	 /* printf("\n\n");
 		for (int o = 0; o < num_chunks; o++)
 	{
 		printf("Chunk %d: [", o);
@@ -140,19 +134,25 @@ int	main(int argc, char **argv)
 			}
 		}
 		printf("]\n\n\n");
-	} 
+	}  */
 	
 	int l = 0;
-    while (l < num_chunks -1) {
+    while (l < num_chunks -1) 
+	{
 	//	printstack(&stack_a, &stack_b);
 		//printf("correeeeeeeeeeeeeeeeeeeeeuuuuuuuuuuuu\n");
       match_finder(&stack_a, &stack_b, chunks[l], chunk_size);
+	  //printstack(&stack_a, &stack_b);
 	   while (stack_b)
-		pa(&stack_a, &stack_b);
-		printstack(&stack_a, &stack_b);
+			pa(&stack_a, &stack_b);
+		//printstack(&stack_a, &stack_b);
         l++;
     }
+
 	match_finder(&stack_a, &stack_b, chunks[l], utils() ->i);
+	 while (stack_b)
+			pa(&stack_a, &stack_b);
+	//printstack(&stack_a, &stack_b);
 	
 	/* while (stack_b)
 		pa(&stack_a, &stack_b);

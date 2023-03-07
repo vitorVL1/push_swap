@@ -6,7 +6,7 @@
 /*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:32:05 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/02 14:24:41 by vlima            ###   ########.fr       */
+/*   Updated: 2023/03/07 11:52:07 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	list2array(t_node **stack1, int *array)
 		current = current->next;
 		i++;
 	}
-	printf("i:%i\n",i);
 }
 
 void	sort_array_ascending(int *array, int size)
