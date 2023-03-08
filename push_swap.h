@@ -6,7 +6,7 @@
 /*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:25:55 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/07 15:18:02 by vlima            ###   ########.fr       */
+/*   Updated: 2023/03/08 17:45:29 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct node_a
 typedef struct s_utils
 {
 	int i;
+	int rep;
 	int *save_array;
 }		t_utils;
 
@@ -64,7 +65,7 @@ void				sorter5(t_node **stack1, t_node **stack2);
 //sorters
 
 //utils
-void 	double_r (t_node **stack1, t_node **stack2,int d);
+void 	double_r (t_node **stack1, t_node **stack2);
 
 int					find_lowest(t_node *stack);
 void				ft_lstadd_back(t_node **lst, t_node *new);

@@ -6,7 +6,7 @@
 /*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:24:25 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/07 14:56:55 by vlima            ###   ########.fr       */
+/*   Updated: 2023/03/08 18:47:41 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,14 @@ void	match_finder(t_node **stack1, t_node **stack2, int *array, int size)
 	//printstack(stack1, stack2);
 	//printf("size:%i\n",size);
 	utils() ->save_array = array;
+	//printf("sizeof %lu\n",(sizeof(utils()->save_array) * sizeof(int)));
+	//printf("size %i\n",size);
 	while (current)
 	{
 		i = 0;
 		while (i < size)
 		{
-			//printf("1array:%i\n",array[i]);
+			printf("i:%i\n1array:%i\n",i,array[i]);
 			if (current->content == array[i])
 			{
 				//printf("valor do array:%d valor da list:%d \n", array[i],
@@ -85,8 +87,8 @@ void	match_finder(t_node **stack1, t_node **stack2, int *array, int size)
 			}
 			i++;
 		}
-		if (i >= 0)
-			current = current->next;
+		 if (current->next== NULL)
+			return ;
 		pos++;
 	}
 	//printf("saiu match\n");

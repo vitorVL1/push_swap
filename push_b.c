@@ -19,6 +19,7 @@ void	ft_reverse_stack(t_node **stack1, t_node **stack2, int i)
 		while (i >= 0)
 		{
 			rb(stack2);
+			//double_r(stack1,stack2);
 			i--;
 		}
 	}
@@ -44,7 +45,9 @@ void	ft_push_to_top_b(t_node **stack1, t_node **stack2, int pos)
 		while (pos > 1)
 		{
 			pos--;
+			//if(utils()->rep != 0 && utils()->i <=  )
 			rb(stack2);
+			//double_r(stack1,stack2,0);
 			i--;
 		}
 	}
@@ -54,6 +57,9 @@ void	ft_push_to_top_b(t_node **stack1, t_node **stack2, int pos)
 		{
 			h--;
 			rrb(stack2);
+			//printstack(stack1, stack2);
+			//double_r(stack1,stack2,1);
+			//printstack(stack1, stack2);
 			i++;
 		}
 	}
@@ -107,7 +113,7 @@ void	negative_organizer(t_node **stack1, t_node **stack2)
 		pos++;
 	}
 	while (pos++ != ft_lstsize(*stack2) && i++ < 100000)
-		double_r(stack1,stack2,1);
+		//double_r(stack1,stack2,1);
 		//rrb(stack2);
 	pb(stack1, stack2);
 	ft_reverse_stack(stack1, stack2, i);

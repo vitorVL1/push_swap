@@ -6,32 +6,41 @@
 /*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:35:24 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/07 15:20:13 by vlima            ###   ########.fr       */
+/*   Updated: 2023/03/08 18:23:54 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void double_r (t_node **stack1, t_node **stack2,int d)
+void double_r (t_node **stack1, t_node **stack2)
 {
 	int i;
 	int *array;
+	int size;
+	int	tog;
+	
 	t_node	*current;
 
 	current = *stack1;
 	array = utils()->save_array;
-	while(i < (utils()->i))
+	tog = 20;
+	if (utils()-> rep == 0)
+		tog = utils()->i;
+			//printf("array[tog]: %d\narray[0]: %d\ncurrent: %d\nnext: %d\n", array[tog], array[0], current->content, current->next->content);
+	/* for(int i=0; i < 20; i++)
 	{
-		if (current->content == array[i])
+		printf("%d ", array[i]);
+	}
+	printf("\n"); */
+	while(i< tog)
+	{
+		//printf("array %i\n",array[i]);
+		if (current->content <= array[tog] && current->content >= array[0] && !(current->next->content <= array[tog] && current->next->content >= array[0]))
+		{
+				rb(stack1);
 			return ;
+		}
 		i++;
 	}
-	if (d == 0)
-	{
-		rr(stack1,stack2);
-	}
-	if (d == 1)
-	{
-		rrr(stack1,stack2);
-	}
+	rr(stack1,stack2);
 }

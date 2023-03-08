@@ -6,7 +6,7 @@
 /*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:18:43 by vlima             #+#    #+#             */
-/*   Updated: 2023/03/07 15:21:33 by vlima            ###   ########.fr       */
+/*   Updated: 2023/03/08 18:34:58 by vlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,13 @@ t_node	*push_swap(int argc, char **argv)
 			ft_lstadd_back(&start, node);
 		}
 		i++;
-	}s
+	}
+	return (start);
+}
+
+int	main(int argc, char **argv)
+{
+	t_node	*stack_a;
 	t_node	*stack_b;
 	int		i[argc-1];
 	int		o=0;
@@ -121,7 +127,7 @@ t_node	*push_swap(int argc, char **argv)
 	sort_array_ascending(i,argc-1);
 	chunks = create_chunk_array(i, argc - 1, chunk_size, &num_chunks);
 
-	 /* printf("\n\n");
+	/*   printf("\n\n");
 		for (int o = 0; o < num_chunks; o++)
 	{
 		printf("Chunk %d: [", o);
@@ -134,14 +140,16 @@ t_node	*push_swap(int argc, char **argv)
 			}
 		}
 		printf("]\n\n\n");
-	}  */
+	}   */
 	
 	int l = 0;
     while (l < num_chunks -1) 
 	{
 	//	printstack(&stack_a, &stack_b);
 		//printf("correeeeeeeeeeeeeeeeeeeeeuuuuuuuuuuuu\n");
+		utils() ->rep--;
       match_finder(&stack_a, &stack_b, chunks[l], chunk_size);
+	  
 	  //printstack(&stack_a, &stack_b);
 	   while (stack_b)
 			pa(&stack_a, &stack_b);

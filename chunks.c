@@ -1,4 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   chunks.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlima <vlima@student.42lisboa.com>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/08 15:23:45 by vlima             #+#    #+#             */
+/*   Updated: 2023/03/08 18:22:06 by vlima            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
+
+void reverse_array(int *array, int size) {
+    int temp, i, j;
+    for (i = 0, j = size - 1; i < j; i++, j--) {
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
 
 int	*create_chunk(int *arr, int start_index, int end_index)
 {
@@ -13,8 +35,11 @@ int	*create_chunk(int *arr, int start_index, int end_index)
 		chunk[i] = arr[start_index + i];
 		i++;
 	}
+	reverse_array(chunk, utils()->i);
 	return (chunk);
 }
+
+
 
 int	**create_chunk_array(int *arr, int arr_size, int chunk_size,
 int *num_chunks)
@@ -37,10 +62,13 @@ int *num_chunks)
 			end_index = arr_size;
 		}
 		chunks[j] = create_chunk(arr, i, end_index);
+		
 		i += chunk_size;
 		j++;
 	}
+	utils()->rep = j;
 	*num_chunks = num;
+
 	return (chunks);
 }
 /* 
